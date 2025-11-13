@@ -9,8 +9,11 @@ export interface ApiResponse<T> {
 export interface User {
   id: string;
   email: string;
-  name: string;
+  username: string;
+  fullname?: string;
   avatar?: string;
+  role: 'traveler' | 'host' | 'admin' | 'user';
+  isVerified: boolean;
   createdAt: string;
   updatedAt: string;
 }
@@ -24,7 +27,8 @@ export interface LoginRequest {
 export interface RegisterRequest {
   email: string;
   password: string;
-  name: string;
+  username?: string;
+  fullname?: string;
 }
 
 export interface AuthResponse {

@@ -16,7 +16,12 @@ export default function AuthDemo() {
     e.preventDefault();
     try {
       if (isRegisterMode) {
-        await register({ email, password, name });
+        await register({
+          email,
+          password,
+          username: email.split('@')[0], // Generate username from email
+          fullname: name
+        });
       } else {
         await login({ email, password });
       }
@@ -28,7 +33,7 @@ export default function AuthDemo() {
   if (isAuthenticated && user) {
     return (
       <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-2xl font-bold mb-4">Welcome, {user.name}!</h2>
+        <h2 className="text-2xl font-bold mb-4">Welcome, {(user as any).fullname || (user as any).username || user.id}!</h2>
         <p className="text-gray-600 mb-4">Email: {user.email}</p>
         <Button onClick={logout} variant="destructive">
           Logout

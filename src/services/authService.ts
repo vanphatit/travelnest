@@ -56,7 +56,15 @@ class AuthService {
   async resetPassword(token: string, password: string): Promise<void> {
     await apiService.post("/auth/reset-password", { token, password });
   }
+
+  // Verify email
+  async verifyEmail(token: string): Promise<void> {
+    await apiService.post(`/auth/verify?token=${token}`);
+  }
 }
 
 export const authService = new AuthService();
 export default authService;
+
+// Export registerUser for compatibility with register page
+export const registerUser = authService.register.bind(authService);

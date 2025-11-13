@@ -1,7 +1,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
 
 // Base URL cho API - có thể thay đổi từ environment variable
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001/api";
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:9091";
 
 class ApiService {
   private axiosInstance: AxiosInstance;
@@ -10,6 +10,7 @@ class ApiService {
     this.axiosInstance = axios.create({
       baseURL: BASE_URL,
       timeout: 10000,
+      withCredentials: true, // Important for cookies
       headers: {
         "Content-Type": "application/json",
       },
@@ -38,7 +39,10 @@ class ApiService {
         if (error.response?.status === 401) {
           // Token expired or invalid
           localStorage.removeItem("token");
-          window.location.href = "/login";
+          // Redirect to login instead of /login to avoid potential issues
+          if (typeof window !== 'undefined') {
+            window.location.href = "/login";
+          }
         }
         return Promise.reject(error);
       }
