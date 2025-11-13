@@ -17,7 +17,7 @@ export default function VerifiedPage() {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                             </div>
-                            
+
                             <div>
                                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
                                     🎉 Chào mừng đến với TravelNest!
@@ -26,7 +26,7 @@ export default function VerifiedPage() {
                                     Email đã được xác thực thành công!
                                 </h2>
                                 <p className="text-gray-600 leading-relaxed">
-                                    Tài khoản của bạn đã được kích hoạt thành công. 
+                                    Tài khoản của bạn đã được kích hoạt thành công.
                                     <br />
                                     Bạn có thể đăng nhập để khám phá những chuyến du lịch tuyệt vời cùng chúng tôi.
                                 </p>
@@ -49,7 +49,7 @@ export default function VerifiedPage() {
                             </div>
                         </div>
                     </div>
-                    
+
                     {/* Decorative footer */}
                     <div className="bg-gradient-to-r from-green-50 to-emerald-50 px-8 py-6">
                         <div className="text-center">
@@ -62,7 +62,7 @@ export default function VerifiedPage() {
                         </div>
                     </div>
                 </div>
-                
+
                 {/* Background decoration */}
                 <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
                     <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full blur-3xl"></div>

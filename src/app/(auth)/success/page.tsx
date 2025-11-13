@@ -33,13 +33,13 @@ export default function AuthSuccessPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
-              
+
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
                   🎉 Đăng nhập thành công!
                 </h1>
                 <p className="text-green-600 font-semibold mb-4">
-                  {provider === 'google' 
+                  {provider === 'google'
                     ? 'Bạn đã đăng nhập thành công với Google.'
                     : 'Chào mừng bạn đến với TravelNest!'
                   }
@@ -52,8 +52,8 @@ export default function AuthSuccessPage() {
               </div>
 
               <div className="pt-2">
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="inline-flex items-center justify-center w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 text-lg"
                 >
                   🏠 Về trang chủ ngay
@@ -61,7 +61,7 @@ export default function AuthSuccessPage() {
               </div>
             </div>
           </div>
-          
+
           {/* Decorative footer */}
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 px-8 py-4">
             <p className="text-center text-sm text-gray-500">
@@ -69,7 +69,7 @@ export default function AuthSuccessPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
           <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-green-200/30 to-emerald-200/30 rounded-full blur-3xl"></div>

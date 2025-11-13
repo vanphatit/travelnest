@@ -44,7 +44,7 @@ export default function AuthErrorPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.107 16.5c-.77.833.192 2.5 1.732 2.5z" />
                 </svg>
               </div>
-              
+
               <div>
                 <h1 className="text-3xl font-bold text-gray-900 mb-2">
                   ❌ Đăng nhập thất bại
@@ -60,14 +60,14 @@ export default function AuthErrorPage() {
               </div>
 
               <div className="space-y-3 pt-2">
-                <a 
-                  href="/login" 
+                <a
+                  href="/login"
                   className="inline-flex items-center justify-center w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition-all duration-200 text-lg"
                 >
                   🔑 Thử đăng nhập lại
                 </a>
-                <a 
-                  href="/register" 
+                <a
+                  href="/register"
                   className="inline-flex items-center justify-center w-full border-2 border-gray-200 hover:border-gray-300 text-gray-700 hover:text-gray-900 font-medium py-4 px-6 rounded-xl hover:bg-gray-50 transition-all duration-200"
                 >
                   ➕ Đăng ký tài khoản mới
@@ -75,7 +75,7 @@ export default function AuthErrorPage() {
               </div>
             </div>
           </div>
-          
+
           {/* Decorative footer */}
           <div className="bg-gradient-to-r from-red-50 to-pink-50 px-8 py-4">
             <p className="text-center text-sm text-gray-500">
@@ -83,7 +83,7 @@ export default function AuthErrorPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden -z-10">
           <div className="absolute -top-40 -right-32 w-80 h-80 bg-gradient-to-br from-red-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
