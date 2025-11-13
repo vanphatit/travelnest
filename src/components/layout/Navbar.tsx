@@ -3,18 +3,19 @@
 import { useState, useEffect } from "react";
 import { Plane, Menu, X } from "lucide-react";
 import { Button } from "../ui/Button";
+import Link from "next/link";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   const menu = [
-    "Vé máy bay",
-    "Khách sạn",
-    "Thuê xe",
-    "Trải nghiệm",
-    "Combo",
-    "Ưu đãi",
+    { name: "Trang chủ", href: "/" },
+    { name: "Vé máy bay", href: "#" },
+    { name: "Khách sạn", href: "#" },
+    { name: "Thuê xe", href: "#" },
+    { name: "Trải nghiệm", href: "#" },
+    { name: "Về chúng tôi", href: "/about" },
   ];
 
   // useEffect để lắng nghe scroll
@@ -38,7 +39,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center">
+        <Link href="/" className="flex items-center">
           <Plane
             className={`w-8 h-8 mr-2 ${
               scrolled ? "text-slate-900" : "text-white"
@@ -51,29 +52,31 @@ const Navbar = () => {
           >
             TravelNest
           </span>
-        </div>
+        </Link>
 
         <nav className="hidden lg:flex space-x-8">
-          {menu.map((m) => (
-            <a
-              key={m}
-              href="#"
+          {menu.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
               className={`hover:text-blue-600 transition-colors ${
                 scrolled ? "text-gray-700" : "text-white"
               }`}
             >
-              {m}
-            </a>
+              {item.name}
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:flex items-center space-x-4">
-          <Button
-            variant="ghost"
-            className={scrolled ? "text-gray-700" : "text-white"}
-          >
-            Đăng nhập
-          </Button>
+          <Link href="/profile">
+            <Button
+              variant="ghost"
+              className={scrolled ? "text-gray-700" : "text-white"}
+            >
+              Profile
+            </Button>
+          </Link>
           <Button
             className={
               scrolled
@@ -104,15 +107,25 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="lg:hidden bg-white shadow-md">
           <nav className="flex flex-col px-4 py-4 space-y-2">
-            {menu.map((m) => (
-              <a key={m} href="#" className="text-gray-700 py-2">
-                {m}
-              </a>
+            {menu.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 py-2"
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.name}
+              </Link>
             ))}
             <hr className="my-2" />
-            <Button variant="ghost" className="justify-start text-gray-700">
-              Đăng nhập
-            </Button>
+            <Link href="/profile" onClick={() => setMobileOpen(false)}>
+              <Button
+                variant="ghost"
+                className="justify-start text-gray-700 w-full"
+              >
+                Profile
+              </Button>
+            </Link>
             <Button className="justify-start bg-slate-900 text-white hover:bg-slate-800 mt-2">
               Đăng ký
             </Button>
